@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#005837">
+<title>Materiaalbon Wit</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- De native camera-app: die levert de volle resolutie van het toestel -->
+<input id="invoer-foto" type="file" accept="image/*" capture="environment" hidden>
+
+<!-- 1. Start: één grote knop -->
+<section id="scherm-start" class="scherm">
+  <img class="logo" src="logo.png" alt="Wit Aannemingsbedrijf" width="616" height="278">
+  <h1>Materiaalbon</h1>
+  <button id="knop-foto" class="knop reuze">Foto maken</button>
+  <p id="status-start" class="melding" hidden></p>
+  <p class="status">Leg de bon plat op een donkere ondergrond en zorg dat de
+    hele bon in beeld is.</p>
+</section>
+
+<!-- 2. Bijsnijden en meteen versturen -->
+<section id="scherm-snijden" class="scherm" hidden>
+  <p id="uitleg-snijden" class="snijder-uitleg"></p>
+  <div class="snijder-vlak"><canvas id="doek"></canvas></div>
+  <p id="status-snijden" class="melding" hidden></p>
+  <button id="knop-versturen" class="knop groot">Versturen</button>
+  <div class="rij">
+    <button id="knop-draai" class="knop groot secundair">Draaien</button>
+    <button id="knop-opnieuw" class="knop groot plat">Opnieuw</button>
+  </div>
+</section>
+
+<!-- 3. Alleen als het deelmenu niet vanzelf openging -->
+<section id="scherm-klaar" class="scherm" hidden>
+  <h2>Klaar</h2>
+  <img id="klaar-beeld" class="klaar-beeld" alt="De gescande bon">
+  <p id="klaar-meta" class="status"></p>
+  <p id="status-klaar" class="melding" hidden></p>
+  <button id="knop-deel" class="knop groot">Versturen via WhatsApp</button>
+  <button id="knop-opslaan" class="knop groot secundair">Opslaan op telefoon</button>
+  <button id="knop-nieuw" class="knop groot plat">Nieuwe bon</button>
+</section>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
